@@ -161,9 +161,26 @@ Virtual address: 0b01000000
 
 ---
 
-## Summary Table
+## Summary of Memory Management Methods
 
-...
+| **Technique**        | **Description**                                                                                       | **Advantages**                                                                 | **Disadvantages / Limitations**                                                      | **Key Concepts**                            |
+|----------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------------|
+| **Base + Limit**     | Assigns each process a contiguous memory region with a base address and size limit.                   | Simple, fast hardware implementation                                            | External fragmentation, hard to grow stack/heap, limited sharing                     | Base register, limit register, protection   |
+| **Segmentation**     | Divides memory into **logical segments** (stack, heap, code, data). Each with its own base + limit.  | Easier to share code/data; segments can grow independently                      | Still suffers from fragmentation, complex to manage segment tables                   | Segment table, segment ID, offset           |
+| **Paging**           | Breaks physical/virtual memory into **fixed-size pages**; uses page tables to map virtual → physical. | Eliminates external fragmentation, supports virtual memory                     | Page table overhead, internal fragmentation (last page)                              | Page number, offset, page table             |
+| **Multi-Level Paging** | Uses hierarchical page tables to reduce memory usage for sparse address spaces.                     | Saves memory by loading only needed page tables                                | Slightly slower due to extra memory accesses                                         | Page directory, page table, page table entry|
+| **Swapping**         | Moves entire processes between **disk and memory** to free space.                                     | Allows more processes than RAM can hold                                        | Very slow due to disk access, requires full process reload                           | Swap space, context switching, disk I/O     |
+| **Virtual Memory**   | Abstracts physical memory; lets processes use more memory than physically available.                 | Enables large apps, improves multiprogramming                                  | Needs paging + disk space, page faults can slow performance                         | Demand paging, MMU, TLB, page faults        |
+
+---
+
+## Notes:
+- **Base + Limit** is simple but inflexible.
+- **Segmentation** allows logical separation but is hard to scale.
+- **Paging** simplifies allocation and eliminates external fragmentation.
+- **Multi-level paging** helps reduce large page table memory usage.
+- **Swapping** allows memory overcommitment but is expensive in time.
+- All modern systems use **Virtual Memory** supported by hardware (MMU).
 
 ---
 
@@ -190,8 +207,8 @@ Virtual address: 0b01000000
 
 ## Diagrams to Draw
 1. Page Table Lookup flowchart
-2. virtual &rarr physical mapping diagram
-    - show virtual address breakdown &rarr page table lookup -> physical addr
+2. virtual -> physical mapping diagram
+    - show virtual address breakdown -> page table lookup -> physical addr
 3. two-level page table
 4. shared page table between two processes
 5. inverted page table structure
