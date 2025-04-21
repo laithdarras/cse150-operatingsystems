@@ -166,19 +166,6 @@ close(fd);
 
 ---
 
-## Diagrams to Draw
-Dual-mode system call flow
-
-Memory-mapped I/O address map
-
-Processor ↔ Device connection (from slide 20.15)
-
-Life cycle of I/O request (slide 20.20)
-
-Combined interrupt + polling timing flow
-
----
-
 ## Key Takeaways
 - The IO system **standardizes communication** with hardware
 - **Interrupts and polling** both have use cases - often combined

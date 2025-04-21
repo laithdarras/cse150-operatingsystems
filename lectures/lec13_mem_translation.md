@@ -161,14 +161,3 @@ Each process has a **Segment Table** that maps:
 | Segmentation Table     | Stores base, limit, valid bits for each segment                             |
 | Swapping               | Move inactive processes to disk to free up RAM                              |
 | Granularity            | Finer divisions (paging) to load partial memory of processes                |
-
----
-
-## Diagrams to Draw:
-
-1. Memory hierarchy pyramid
-2. Base + Limit translation
-3. Segmentation vs Fragmentation
-4. Segment Table and address translation steps
-5. Swapping illustration
-6. Segment ID + Offset breakdown example: `0xC000`

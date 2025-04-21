@@ -212,17 +212,6 @@
 
 ---
 
-## Diagrams to Draw
-
-- Disk head scheduling examples (SCAN, C-SCAN)
-- Block layouts: continuous, linked, FAT, indexed
-- Multilevel inode structure
-- Directory hierarchy and symlinks
-- File caching architecture
-- Journaling flow: log + commit + replay
-
----
-
 ## Key Takeaways
 
 - File system bridges disk blocks → usable abstractions
