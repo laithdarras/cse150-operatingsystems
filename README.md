@@ -12,5 +12,5 @@ It serves as a personal knowledge base, combining lecture notes and textbook exe
 
 ---
 
-## ⚠Disclaimer
+## Disclaimer
 These are **personal study notes** and are not official course material.
